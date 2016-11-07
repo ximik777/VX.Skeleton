@@ -13,5 +13,8 @@
       "type": "git",
       "url": "https://github.com/ximik777/VX.JS"
     }
-  ]
+  ],
+  "autoload": {
+    "classmap": ["private/"]
+  }
 }
