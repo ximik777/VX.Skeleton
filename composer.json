@@ -1,0 +1,16 @@
+{
+  "require": {
+    "VX/Core": "dev-master",
+    "VX/JS": "dev-master"
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/ximik777/VX.Core"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/ximik777/VX.JS"
+    }
+  ]
+}
