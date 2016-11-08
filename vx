@@ -115,7 +115,7 @@ function out($err = false) {
             echo("".PHP_EOL.
                 "Welcome to the test vx".PHP_EOL.PHP_EOL.
                 "\e[32mAvailable commands:\e[0m".PHP_EOL.
-                "\t\e[35help>\e[0m".PHP_EOL.
+                "\t\e[35mhelp\e[0m".PHP_EOL.
                 "\t\e[35mnew <project_path>\e[0m".PHP_EOL.
                 "\t\e[35mupdate\e[0m".PHP_EOL.
                 "".PHP_EOL.
