@@ -111,10 +111,10 @@ function Action_update($path) {
 
     echo $obj->sha.PHP_EOL;
 
-    echo sha1('vx').PHP_EOL;
+    echo sha1($path).PHP_EOL;
 
 
-    if (sha1('vx') == $obj->sha) {
+    if (sha1_file($path) == $obj->sha) {
         out('latest version');
     }
 
