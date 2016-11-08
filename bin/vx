@@ -116,7 +116,7 @@ function Action_update($path) {
 
     $tmp = hash('crc32', time().rand(111,999));
 
-    file_put_contents($path, fopen('https://raw.githubusercontent.com/ximik777/VX.Skeleton/master/vx?'.$tmp, 'r'));
+    file_put_contents($path, fopen('https://raw.githubusercontent.com/ximik777/VX.Skeleton/master/bin/vx?'.$tmp, 'r'));
 
     echo "VX file successfully updated at $path";
 
