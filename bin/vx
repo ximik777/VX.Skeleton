@@ -96,6 +96,30 @@ function Action_new($path) {
 
 function Action_update($path) {
 
+    $agent = 'VX.Skeleton';
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_USERAGENT, $agent);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+//curl_setopt($ch, CURLOPT_URL, 'https://api.github.com/repos/ximik777/VX.Skeleton/git/blobs/6c871e676c067896fd241f76e48e6ca6df2f8957');
+    curl_setopt($ch, CURLOPT_URL, 'https://api.github.com/repos/ximik777/VX.Skeleton/contents/vx');
+    $result = curl_exec($ch);
+    curl_close($ch);
+
+    $obj = json_decode($result);
+
+    echo $obj->sha.PHP_EOL;
+
+    echo sha1('vx').PHP_EOL;
+
+
+    if (sha1('vx') == $obj->sha) {
+        out('latest version');
+    }
+
+    die();
+
     $tmp = hash('crc32', time().rand(111,999));
 
     file_put_contents($path, fopen('https://raw.githubusercontent.com/ximik777/VX.Skeleton/master/vx?'.$tmp, 'r'));
@@ -120,6 +144,10 @@ function out($err = false) {
                 "".PHP_EOL.
                 "(c) Test VX".PHP_EOL
             );
+            break;
+        case 'latest version':
+            echo PHP_EOL."У вас уже скачена последняя версия VX".PHP_EOL;
+            $ret =1;
             break;
         case 1:
             echo PHP_EOL."Укажите имя проекта".PHP_EOL;
