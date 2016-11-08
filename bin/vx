@@ -103,7 +103,7 @@ function Action_update($path) {
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 //curl_setopt($ch, CURLOPT_URL, 'https://api.github.com/repos/ximik777/VX.Skeleton/git/blobs/6c871e676c067896fd241f76e48e6ca6df2f8957');
-    curl_setopt($ch, CURLOPT_URL, 'https://api.github.com/repos/ximik777/VX.Skeleton/contents/vx');
+    curl_setopt($ch, CURLOPT_URL, 'https://api.github.com/repos/ximik777/VX.Skeleton/contents/bin/vx');
     $result = curl_exec($ch);
     curl_close($ch);
 
