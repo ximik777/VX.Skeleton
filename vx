@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 
 <?php
-//test shit
+echo 123;
 pcntl_signal(SIGINT, "out");
 
 $ret = 0;
