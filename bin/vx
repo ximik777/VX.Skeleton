@@ -111,7 +111,8 @@ function Action_update($path) {
 
     echo $obj->sha.PHP_EOL;
 
-    echo sha1($path).PHP_EOL;
+    echo sha1_file($path).PHP_EOL;
+    echo $path.PHP_EOL;
 
 
     if (sha1_file($path) == $obj->sha) {
