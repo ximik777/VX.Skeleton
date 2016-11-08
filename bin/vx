@@ -114,6 +114,15 @@ function Action_update($path) {
     echo sha1_file($path).PHP_EOL;
     echo $path.PHP_EOL;
 
+    $a = base64_encode(file_get_contents($path));
+
+    if($a == $obj->content) {
+        echo 123;
+        die();
+    }
+
+    echo $a; die();
+
 
     if (sha1_file($path) == $obj->sha) {
         out('latest version');
