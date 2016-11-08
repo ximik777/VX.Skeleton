@@ -16,5 +16,8 @@
   ],
   "autoload": {
     "classmap": ["private/"]
+  },
+  "psr-0": {
+    "bundle\\langsup\\": "vendor/VX/LangsUP/private/bundle/langsup"
   }
 }
