@@ -117,6 +117,7 @@ function Action_update($path) {
 
     if (sha1_file($path) == $obj->sha) {
         out('latest version');
+        //test
     }
 
     die();
