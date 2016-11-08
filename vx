@@ -24,38 +24,15 @@ $params = array(
 $options = getopt(implode('', array_keys($params)), $params );
 
 
-//foreach ($options as $k=>$v){  todo remove test
-//    echo $k."__".$v."\r\n";
-////    echo $options['h'];
-//}
-//var_dump($options);
-//
-//die();
-
 if($options) {
     call_user_func('Action_main', $options);
 }
 
-
-
 foreach ($argv as $k=>$v) {
     if(in_array($v, $actions)) {
         $action = $v;
-//        $path = $argv[$k+1];  todo remove test
-//        for($i = $k+1; $i<$argc; $i++)
-//        array_push($options, $argv[$i]);
-//        break;
-//        var_dump($path);
     }
 }
-
-//        $path = $argv[$k+1];
-//        for($i = $k+1; $i<$argc; $i++)
-//        array_push($options, $argv[$i]);
-//        break;
-//        var_dump($path);
-
-
 
 if(!$action || $action == 'help') {
     out('help');
@@ -88,8 +65,6 @@ function Action_main($options) {
             break;
 
     }
-
-
 }
 
 function Action_new($path) {
@@ -122,7 +97,12 @@ function Action_new($path) {
 
 function Action_update($path) {
 
-    echo $path;
+
+    file_put_contents($path, fopen('https://raw.githubusercontent.com/ximik777/VX.Skeleton/master/vx', 'r'));
+
+    echo "VX file successfully updated at $path";
+
+    out();
 
 }
 
@@ -155,9 +135,11 @@ function out($err = false) {
             unlink(sys_get_temp_dir().'/VX.Skeleton.zip');
             $ret =1;
             break;
-        default:
-            echo PHP_EOL."Done. Have a nice day!".PHP_EOL;
+        case 4:
             unlink(sys_get_temp_dir().'/VX.Skeleton.zip');
+            continue;
+        default:
+            echo PHP_EOL."Have a nice day!".PHP_EOL;
             break;
 
     }
@@ -165,4 +147,3 @@ function out($err = false) {
 
     exit($ret);
 }
-
