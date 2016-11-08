@@ -17,8 +17,7 @@ $action = false;
 $options = [];
 
 $params = array(
-    'h::' => 'help',
-    't::' => 'test'
+    'h::' => 'help'
 );
 
 $options = getopt(implode('', array_keys($params)), $params );
@@ -113,7 +112,7 @@ function out($err = false) {
 
         case 'help':
             echo("".PHP_EOL.
-                "Welcome to the test vx".PHP_EOL.PHP_EOL.
+                "Welcome to the test vx".PHP_EOL.
                 "\e[32mAvailable commands:\e[0m".PHP_EOL.
                 "\t\e[35mhelp\e[0m".PHP_EOL.
                 "\t\e[35mnew <project_path>\e[0m".PHP_EOL.
