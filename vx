@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 
 <?php
-
+echo 123;
 pcntl_signal(SIGINT, "out");
 
 $ret = 0;
@@ -97,8 +97,9 @@ function Action_new($path) {
 
 function Action_update($path) {
 
+    $tmp = hash('crc32', time().rand(111,999));
 
-    file_put_contents($path, fopen('https://raw.githubusercontent.com/ximik777/VX.Skeleton/master/vx', 'r'));
+    file_put_contents($path, fopen('https://raw.githubusercontent.com/ximik777/VX.Skeleton/master/vx?'.$tmp, 'r'));
 
     echo "VX file successfully updated at $path";
 
