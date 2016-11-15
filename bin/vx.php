@@ -38,7 +38,11 @@ if(!$action || $action == 'help') {
 switch ($action) {
     case 'new':
         for($i = 0; $i<$argc; $i++) {
-            if($argv[$i] = 'new') {
+            if($argv[$i] == $action) {
+                if(!isset($argv[$i+1])) {
+                    out(1);
+                    break;
+                }
                 $path = $argv[$i+1];
                 Action_new($path);
             }
@@ -49,8 +53,6 @@ switch ($action) {
         Action_update($path);
         break;
 }
-
-call_user_func('Action_'.$action);
 
 function Action_main($options) {
 
@@ -83,7 +85,7 @@ function Action_new($path) {
     if ($res === TRUE) {
         $zip->extractTo($path);
         $zip->close();
-        echo "VX.Skeleton.zip extracted to $path";
+        echo "VX.Skeleton.zip extracted to $path".PHP_EOL;
     } else {
         out(3);
     }
