@@ -130,13 +130,13 @@ function out($err = false) {
 
         case 'help':
             echo("".PHP_EOL.
-                "Welcome to the test vx".PHP_EOL.
+                "Welcome to the vx".PHP_EOL.
                 "\e[32mAvailable commands:\e[0m".PHP_EOL.
                 "\t\e[35mhelp\e[0m".PHP_EOL.
                 "\t\e[35mnew <project_path>\e[0m".PHP_EOL.
                 "\t\e[35mupdate\e[0m".PHP_EOL.
                 "".PHP_EOL.
-                "(c) Test VX".PHP_EOL
+                "(c) vx".PHP_EOL
             );
             break;
         case 'latest version':
