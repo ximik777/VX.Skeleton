@@ -2,6 +2,7 @@
   "require": {
     "VX/Core": "dev-master",
     "VX/JS": "dev-master",
+    "kbjr/Git.php": "dev-master",
     "twig/twig": ">=1.8,<2.0-dev"
   },
   "repositories": [
@@ -12,12 +13,13 @@
     {
       "type": "git",
       "url": "https://github.com/ximik777/VX.JS"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/kbjr/Git.php.git"
     }
   ],
   "autoload": {
     "classmap": ["private/"]
-  },
-  "psr-0": {
-    "bundle\\langsup\\": "vendor/VX/LangsUP/private/bundle/langsup"
   }
 }
